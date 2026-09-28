@@ -48,5 +48,5 @@ Timers and services that need no display must not mention
 must run with no one logged in.
 
 After editing units: `systemctl --user daemon-reload`. Then
-`systemctl --user show graphical-session.target -p RequiredBy` must not
-list the job.
+`systemctl --user show graphical-session.target -p RequiredBy -p WantedBy`
+must not list the job.
