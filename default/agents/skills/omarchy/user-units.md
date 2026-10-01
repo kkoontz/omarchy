@@ -5,8 +5,10 @@ turning on linger (`loginctl enable-linger`), or installing a timer that
 should run at login or while nobody is at the desk.
 
 UWSM owns `graphical-session.target`. Omarchy's shipped user units under
-`$OMARCHY_PATH/default/systemd/user/` start *with* that target via
-`WantedBy=graphical-session.target`. They never `Requires=` or `Wants=` it.
+`$OMARCHY_PATH/default/systemd/user/` that run with the session start *with*
+that target via `WantedBy=graphical-session.target` (the one that must run
+before it uses `graphical-session-pre.target`). None of them `Requires=` or
+`Wants=` it.
 
 Copy that pattern. Generic systemd examples for GUI services often use
 `Requires=graphical-session.target`. That *starts* the target. If the user
