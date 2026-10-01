@@ -15,8 +15,8 @@ Copy that pattern. Generic systemd examples for GUI services often use
 manager is already up (linger, a Persistent timer, an SSH login), UWSM then
 sees a session already active, prints
 `A compositor or graphical-session* target is already active!`, and refuses
-to start Hyprland. Plymouth has quit. The screens stay black until the next
-boot.
+to start Hyprland. Plymouth has quit. The screens stay black, and a unit that
+starts on every boot does the same again after a reboot.
 
 ## Session-bound daemons
 
